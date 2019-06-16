@@ -3,7 +3,6 @@ package net.minecraft.entity.raid;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import billy.raidim.RaidImMod;
 import billy.raidim.reflect.EnumHelper;
 import billy.raidim.reflect.FieldHelper;
 import net.minecraft.entity.EntityType;
@@ -25,21 +24,8 @@ public class RaidMember {
 		attrmap.put(count_fld, waves);
 		Member m=helper.add(name,attrmap);
 		Member[] mem=values_fld.get(null);
-		RaidImMod.logger.info(m);
-		RaidImMod.logger.info(count_fld.get(m));
-		for(int i:(int[])count_fld.get(m)) {
-			RaidImMod.logger.info(i);
-		}
-		RaidImMod.logger.info(type_fld.get(m));
-		for(Member mn:mem) {
-			RaidImMod.logger.info("      {}",mn);
-		}
 		Member[] n=Arrays.copyOf(mem, mem.length+1);
 		n[mem.length]=m;
 		values_fld.set(null, n);
-		RaidImMod.logger.info("after");
-		for(Member mn:values_fld.get(null)) {
-			RaidImMod.logger.info("      {}",mn);
-		}
 	}
 }

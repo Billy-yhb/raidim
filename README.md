@@ -1,16 +1,5 @@
-# Fabric Example Mod
-
-## Setup
-
-1. Edit build.gradle and mod.json to suit your needs.
-    * The "mixins" object can be removed from mod.json if you do not need to use mixins.
-    * Please replace all occurences of "modid" with your own mod ID - sometimes, a different string may also suffice.
-2. Run the following command:
-
-```
-./gradlew idea
-```
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+#RaidIm
+增强袭击  
+在袭击的第6波和第7波分别增加了1个和2个幻术师  
+村民现在有概率会八卦村庄英雄  
+这是一个fabric模组(不是forge),安装方法件fabric相关文档  
