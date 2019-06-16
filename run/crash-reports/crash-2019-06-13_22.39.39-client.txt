@@ -1,0 +1,97 @@
+---- Minecraft Crash Report ----
+// I blame Dinnerbone.
+
+Time: 2019/6/13 下午10:39
+Description: Initializing game
+
+java.lang.RuntimeException: Could not execute entrypoint stage 'main' due to errors!
+	at net.fabricmc.loader.entrypoint.hooks.EntrypointUtils.logErrors(EntrypointUtils.java:45)
+	at net.fabricmc.loader.entrypoint.hooks.EntrypointClient.start(EntrypointClient.java:34)
+	at net.minecraft.client.MinecraftClient.init(MinecraftClient.java)
+	at net.minecraft.client.MinecraftClient.start(MinecraftClient.java:368)
+	at net.minecraft.client.main.Main.main(Main.java:126)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at net.fabricmc.loader.game.MinecraftGameProvider.launch(MinecraftGameProvider.java:170)
+	at net.fabricmc.loader.launch.knot.Knot.init(Knot.java:129)
+	at net.fabricmc.loader.launch.knot.KnotClient.main(KnotClient.java:26)
+	Suppressed: java.lang.NullPointerException
+		at billy.raidim.reflect.EnumHelper.add(EnumHelper.java:47)
+		at net.minecraft.entity.raid.RaidMember.addRaidMember(RaidMember.java:23)
+		at billy.raidim.RaidImMod.onInitialize(RaidImMod.java:14)
+		at net.fabricmc.loader.entrypoint.hooks.EntrypointUtils.lambda$logErrors$0(EntrypointUtils.java:38)
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+		at net.fabricmc.loader.entrypoint.hooks.EntrypointUtils.logErrors(EntrypointUtils.java:36)
+		... 11 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at net.fabricmc.loader.entrypoint.hooks.EntrypointUtils.logErrors(EntrypointUtils.java:45)
+	at net.fabricmc.loader.entrypoint.hooks.EntrypointClient.start(EntrypointClient.java:34)
+	at net.minecraft.client.MinecraftClient.init(MinecraftClient.java)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.MinecraftClient.start(MinecraftClient.java:368)
+	at net.minecraft.client.main.Main.main(Main.java:126)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at net.fabricmc.loader.game.MinecraftGameProvider.launch(MinecraftGameProvider.java:170)
+	at net.fabricmc.loader.launch.knot.Knot.init(Knot.java:129)
+	at net.fabricmc.loader.launch.knot.KnotClient.main(KnotClient.java:26)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.14.2
+	Operating System: Linux (amd64) version 5.1.4-1-MANJARO
+	Java Version: 11.0.3, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 148739808 bytes (141 MB) / 486539264 bytes (464 MB) up to 2055208960 bytes (1960 MB)
+	JVM Flags: 0 total; 
+	Fabric Mods: 
+		fabric: Fabric API 0.3.0+build.176
+		fabric-api-base: fabric-api-base 0.1.0+59147463
+		fabric-commands-v0: fabric-commands-v0 0.1.1+25fd0c52
+		fabric-containers-v0: fabric-containers-v0 0.1.2+25fd0c52
+		fabric-content-registries-v0: fabric-content-registries-v0 0.1.1+45e1a1c8
+		fabric-crash-report-info-v1: fabric-crash-report-info-v1 0.1.0+59147463
+		fabric-events-interaction-v0: fabric-events-interaction-v0 0.1.0+59147463
+		fabric-events-lifecycle-v0: fabric-events-lifecycle-v0 0.1.0+59147463
+		fabric-item-groups-v0: fabric-item-groups-v0 0.1.0+59147463
+		fabric-keybindings-v0: fabric-keybindings-v0 0.1.0+59147463
+		fabric-mining-levels-v0: fabric-mining-levels-v0 0.1.0+59147463
+		fabric-models-v0: fabric-models-v0 0.1.0+59147463
+		fabric-networking-blockentity-v0: fabric-networking-blockentity-v0 0.1.1+25fd0c52
+		fabric-networking-v0: fabric-networking-v0 0.1.2+200eb5c2
+		fabric-object-builders-v0: fabric-object-builders-v0 0.1.1+9fe2f882
+		fabric-registry-sync-v0: fabric-registry-sync-v0 0.2.1+4d26f9ba
+		fabric-renderer-api-v1: fabric-renderer-api-v1 0.1.0+02a46d5b
+		fabric-renderer-indigo: fabric-renderer-indigo 0.1.4+9ff0718a
+		fabric-rendering-data-attachment-v1: fabric-rendering-data-attachment-v1 0.1.0+02a46d5b
+		fabric-rendering-fluids-v1: fabric-rendering-fluids-v1 0.1.0+dc4c57c2
+		fabric-rendering-v0: fabric-rendering-v0 0.1.0+59147463
+		fabric-resource-loader-v0: fabric-resource-loader-v0 0.1.1+59147463
+		fabric-tag-extensions-v0: fabric-tag-extensions-v0 0.1.0+59147463
+		fabric-textures-v0: fabric-textures-v0 0.1.4+792c1c35
+		fabricloader: Fabric Loader 0.4.8+build.154
+		modid: Example Mod 1.0.0
+	Launched Version: Fabric
+	LWJGL: 3.2.1 build 12
+	OpenGL: NO CONTEXT
+	GL Caps: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fabric'
+	Type: Client (map_client.txt)
+	Resource Packs: ~~ERROR~~ NullPointerException: null
+	Current Language: ~~ERROR~~ NullPointerException: null
+	CPU: <unknown>

@@ -1,0 +1,24 @@
+[06:50:12] [main/INFO]: [CHAT] 您的游戏模式已被设置为生存模式 
+[06:50:12] [Server thread/INFO]: [Player474: 您的游戏模式已被设置为生存模式 ]
+[06:50:45] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2024ms or 40 ticks behind
+[06:50:48] [Server thread/INFO]: Saving and pausing game...
+[06:50:48] [Server thread/INFO]: Saving chunks for level '新的世界'/minecraft:the_end
+[06:50:48] [Server thread/INFO]: Saving chunks for level '新的世界'/minecraft:overworld
+[06:50:48] [Server thread/INFO]: Saving chunks for level '新的世界'/minecraft:the_nether
+[06:50:49] [Server thread/INFO]: Player474 lost connection: 连接中止
+[06:50:49] [Server thread/INFO]: Player474退出了游戏
+[06:50:49] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[06:50:49] [Server thread/INFO]: Stopping server
+[06:50:49] [Server thread/INFO]: Saving players
+[06:50:49] [Server thread/INFO]: Saving worlds
+[06:50:49] [Server thread/INFO]: Saving chunks for level '新的世界'/minecraft:the_end
+[06:50:49] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[06:50:49] [Server thread/INFO]: Saving chunks for level '新的世界'/minecraft:overworld
+[06:50:49] [Server thread/INFO]: ThreadedAnvilChunkStorage (新的世界 (1)): All chunks are saved
+[06:50:49] [Server thread/INFO]: Saving chunks for level '新的世界'/minecraft:the_nether
+[06:50:49] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[06:50:49] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[06:50:49] [Server thread/INFO]: ThreadedAnvilChunkStorage (新的世界 (1)): All chunks are saved
+[06:50:49] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[06:50:49] [main/INFO]: Built for minecraft version 1.14.2
+[06:50:51] [main/INFO]: Stopping!
