@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "raidim",
   "version": "1.0.0",
 
   "name": "Example Mod",
@@ -23,7 +23,7 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "raidim.mixins.json"
   ],
 
   "depends": {

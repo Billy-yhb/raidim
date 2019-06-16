@@ -5,12 +5,9 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import billy.raidim.RaidImMod;
-
 import org.spongepowered.asm.mixin.injection.At;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.AbstractTraderEntity;
@@ -29,26 +26,22 @@ public abstract class RaidMixin extends AbstractTraderEntity{
 	private VillagerGossips gossip;
 	@Inject(method="tick",at=@At("HEAD"))
 	public void onTick(CallbackInfo info) {
-		try {
-			if(isAlive()&&!world.isClient) {
-				for(PlayerEntity player:world.getPlayers()) {
-					if(player.distanceTo(this)<64&&player.canSee(this)) {
-						int level=0;
-						StatusEffectInstance hero=player.getStatusEffect(
-								StatusEffects.HERO_OF_THE_VILLAGE);
-						if(hero==null)
-							continue;
-						if((level=hero.getAmplifier())>=2){
-							if(Math.random()<0.008*level*level*level/player.squaredDistanceTo(this)) {
-								gossip.startGossip(player.getUuid(), 
-										VillageGossipType.MINOR_POSITIVE, 30);
-							}
+		if(isAlive()&&!world.isClient) {
+			for(PlayerEntity player:world.getPlayers()) {
+				if(player.distanceTo(this)<64&&player.canSee(this)) {
+					int level=0;
+					StatusEffectInstance hero=player.getStatusEffect(
+							StatusEffects.HERO_OF_THE_VILLAGE);
+					if(hero==null)
+						continue;
+					if((level=hero.getAmplifier())>=2){
+						if(Math.random()<0.008*level*level*level/player.squaredDistanceTo(this)) {
+							gossip.startGossip(player.getUuid(), 
+									VillageGossipType.MINOR_POSITIVE, 30);
 						}
 					}
 				}
 			}
-		}catch(Throwable t) {
-			RaidImMod.logger.catching(t);
 		}
 	}
 }
