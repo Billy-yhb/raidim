@@ -18,5 +18,8 @@
   
 ------
 这是一个fabric模组(不是forge),安装方法见fabric相关文档  
-Minecraft版本要求1.14+
-[fabric下载地址](https://fabricmc.net/use/)  
+Minecraft版本要求1.14+  
+fabric loader+fabric api是运行fabric模组所需的最小环境,你需要至少安装这两个mod  
+[fabric loader下载地址](https://fabricmc.net/use/)  
+[fabric api下载地址](https://minecraft.curseforge.com/projects/fabric/files)  
+fabric api的下载页面由于引用了谷歌的页面在国内访问很慢,你可以点击[这里](https://minecraft.curseforge.com/projects/fabric/files/latest),下载fabric api的jar文件,放进Minecraft运行目录下的mods文件夹中即可完成fabric api的安装
