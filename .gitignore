@@ -30,4 +30,5 @@ run/*
 # eclipse files
 .classpath
 .setttings/*
-/.gradle/
+.gradle/*
+/build/

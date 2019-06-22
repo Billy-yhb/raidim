@@ -3,9 +3,13 @@
   "package": "billy.raidim.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-	"RaidMixin"
+	"RaidMixin",
+	"VillagerMixin",
+	"ServerWorldMixin"
   ],
   "client": [
+	"NetworkMixin",
+	"ItemGroupMixin"
   ],
   "injectors": {
     "defaultRequire": 1

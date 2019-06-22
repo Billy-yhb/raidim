@@ -3,8 +3,8 @@
   "id": "raidim",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "RaidIm",
+  "description": "Raid Improve",
   "authors": [
     "Me!"
   ],
@@ -14,13 +14,16 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/raidim/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
       "billy.raidim.RaidImMod"
-    ]
+    ],
+	"client":[
+      "billy.raidim.client.ClientInit"
+	]
   },
   "mixins": [
     "raidim.mixins.json"
