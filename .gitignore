@@ -32,3 +32,4 @@ run/*
 .setttings/*
 .gradle/*
 /build/
+/.gradle/

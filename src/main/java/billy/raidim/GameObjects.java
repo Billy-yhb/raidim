@@ -2,9 +2,9 @@ package billy.raidim;
 
 import java.util.TreeMap;
 
+import billy.raidim.entity.RaidMember;
 import billy.raidim.reflect.FieldHelper;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.raid.RaidMember;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
