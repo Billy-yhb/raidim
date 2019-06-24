@@ -29,7 +29,9 @@ run/*
 
 # eclipse files
 .classpath
-.setttings/*
+.project
+.settings/*
 .gradle/*
+.mixin.out/*
 /build/
 /.gradle/
