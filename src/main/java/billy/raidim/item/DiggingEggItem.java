@@ -28,4 +28,7 @@ public class DiggingEggItem extends Item {
 		}
 		return new TypedActionResult<>(ActionResult.SUCCESS,player.getStackInHand(hand));
 	}
+	protected float getGravity() {
+		return 0.002F;
+	}
 }

@@ -5,7 +5,8 @@
   "mixins": [
 	"RaidMixin",
 	"VillagerMixin",
-	"ServerWorldMixin"
+	"ServerWorldMixin",
+	"LivingEntityMixin"
   ],
   "client": [
 	"NetworkMixin",

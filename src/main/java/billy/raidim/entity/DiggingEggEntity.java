@@ -1,11 +1,18 @@
 package billy.raidim.entity;
 
+import java.util.List;
+
 import billy.raidim.item.DiggingEggItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.boss.WitherEntity;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.passive.IronGolemEntity;
+import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
@@ -13,6 +20,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BoundingBox;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
 public class DiggingEggEntity extends ThrownItemEntity {
@@ -43,6 +53,14 @@ public class DiggingEggEntity extends ThrownItemEntity {
 				(var1.getType()==HitResult.Type.ENTITY&&
 				!((EntityHitResult)var1).getEntity().equals(getOwner()))) {
 			remove();
+			float amount=world.getDifficulty()==Difficulty.HARD?100:90;
+			for(Entity e:getNearByEntities(var1.getPos())) {
+				if(e instanceof IronGolemEntity||e instanceof WitherEntity||
+						e instanceof SnowGolemEntity) {
+					e.damage(DamageSource
+							.thrownProjectile(this,getOwner()),amount);
+				}
+			}
 			BlockPos pos=new BlockPos(var1.getPos());
 			for(int i=-1;i<=1;i++) {
 				for(int j=-1;j<=1;j++) {
@@ -59,6 +77,11 @@ public class DiggingEggEntity extends ThrownItemEntity {
 			tryDest(pos.west(2));
 		}
 	}
+	private List<Entity> getNearByEntities(Vec3d pos) {
+		return world.getEntities(Entity.class, new BoundingBox(
+				pos.x-3.5,pos.y-3.5,pos.z-3.5,pos.x+3.5,pos.y+3.5,pos.z+3.5));
+	}
+
 	protected void tryDest(BlockPos pos) {
 		if(canbreak(pos))
 			world.breakBlock(pos, true);

@@ -2,7 +2,9 @@ package billy.raidim.client;
 
 import billy.raidim.GameHooks;
 import billy.raidim.RaidImMod;
+import billy.raidim.client.renderer.MinerEntityRender;
 import billy.raidim.entity.DiggingEggEntity;
+import billy.raidim.entity.MinerEntity;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -16,6 +18,8 @@ public class ClientInit implements ClientModInitializer{
 		EntityRendererRegistry.INSTANCE.register(DiggingEggEntity.class,
 				(m,c)->new FlyingItemEntityRenderer<DiggingEggEntity>(m,
 						MinecraftClient.getInstance().getItemRenderer()));
+		EntityRendererRegistry.INSTANCE.register(MinerEntity.class,
+				(m,c)->new MinerEntityRender(m));
 		GameHooks.client_entity_spawn_hooks.add((packet,type,world)->{
 			if(type==RaidImMod.DIGGINGEGG) {
 				return new DiggingEggEntity(RaidImMod.DIGGINGEGG,
