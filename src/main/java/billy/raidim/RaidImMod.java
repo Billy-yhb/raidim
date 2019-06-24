@@ -38,7 +38,7 @@ public class RaidImMod implements ModInitializer {
 				.trackable(80, 2).build());
 		Registry.register(Registry.ENTITY_TYPE, prefix("miner"),
 				MINER=FabricEntityTypeBuilder.
-				<MinerEntity>create(EntityCategory.MISC,
+				<MinerEntity>create(EntityCategory.MONSTER,
 						MinerEntity::new)
 				.size(new EntitySize(0.6f,1.8f,true))
 				.trackable(80, 2).build());

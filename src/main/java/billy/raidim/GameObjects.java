@@ -22,7 +22,7 @@ public class GameObjects {
 	}
 	public static void addRaidMember(String name,EntityType<?> type,
 			int c1,int c2,int c3,int c4,int c5,int c6,int c7) {
-		RaidMember.addRaidMember(name, type, new int[] {c1,c2,c3,c4,c5,c6,c7});
+		RaidMember.addRaidMember(name, type, new int[] {0,c1,c2,c3,c4,c5,c6,c7});
 	}
 	public static SpawnEggItem addSpawnEgg(EntityType<?> type,int color1,int color2) {
 		SpawnEggItem item=new SpawnEggItem(type,color1,color2,

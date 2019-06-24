@@ -21,7 +21,7 @@ public class RaidMember {
 			new FieldHelper<>(mem_cls,"field_16628","countInWave");
 	public static final FieldHelper<Object[]> values_fld=
 			new FieldHelper<>(mem_cls,"field_16636","VALUES");
-	public static void addRaidMember(String name,EntityType type,int...waves) {
+	public static void addRaidMember(String name,EntityType type,int[]waves) {
 		HashMap<FieldHelper,Object> attrmap=new HashMap<>();
 		attrmap.put(type_fld,type);
 		attrmap.put(count_fld, waves);

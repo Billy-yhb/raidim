@@ -27,7 +27,7 @@ public class AttackGolemGoal extends Goal{
 				miner.getBoundingBox().expand(
 						2*miner.world.getGameRules()
 						.getInteger("raidRadius")));
-		if(tg==null||!miner.canSee(tg)) {
+		if(tg==null||!miner.canSee(tg)||miner.squaredDistanceTo(tg)>2500) {
 			return false;
 		}else {
 			miner.setTarget(tg);
@@ -35,7 +35,7 @@ public class AttackGolemGoal extends Goal{
 		return miner.preThrowEgg==0&&miner.diggingeggcooldown==0;
 	}
 	public boolean shouldContinue() {
-		return miner.preThrowEgg!=0;
+		return miner.preThrowEgg!=0&&miner.getTarget()!=null;
 	}
 	BlockPos pos=null;
 	public void start() {

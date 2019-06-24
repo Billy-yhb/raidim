@@ -67,7 +67,10 @@ public class MinerEntity extends IllagerEntity {
 			}
 			public void tick() {
 				if(this.mob.getTarget() instanceof IronGolemEntity) {
-					speed_fld.set(this, 0.2);
+					if(this.mob.getTarget().distanceTo(this.mob)<32)
+						speed_fld.set(this, 0.2);
+					else
+						speed_fld.set(this, 0.8);
 				}else {
 					speed_fld.set(this, 1.2);
 				}
