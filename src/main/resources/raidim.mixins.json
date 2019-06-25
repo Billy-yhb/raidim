@@ -6,7 +6,8 @@
 	"RaidMixin",
 	"VillagerMixin",
 	"ServerWorldMixin",
-	"LivingEntityMixin"
+	"LivingEntityMixin",
+	"RaidManagerMixin"
   ],
   "client": [
 	"NetworkMixin",
