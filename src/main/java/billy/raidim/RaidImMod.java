@@ -24,24 +24,24 @@ public class RaidImMod implements ModInitializer {
 	public static final Logger logger=
 			org.apache.logging.log4j.LogManager.getLogger("RaidIm");
 	public static String modid="raidim";
-	public static EntityType<DiggingEggEntity> DIGGINGEGG=null;
-	public static EntityType<MinerEntity> MINER=null;
+	public static final EntityType<DiggingEggEntity> DIGGINGEGG=FabricEntityTypeBuilder.
+			<DiggingEggEntity>create(EntityCategory.MISC,
+					DiggingEggEntity::new)
+			.size(new EntitySize(0.3f,0.3f,true))
+			.trackable(80, 2).build();
+	public static final EntityType<MinerEntity> MINER=FabricEntityTypeBuilder.
+			<MinerEntity>create(EntityCategory.MONSTER,
+					MinerEntity::new)
+			.size(new EntitySize(0.6f,1.8f,true))
+			.trackable(80, 2).build();
 	@Environment(EnvType.SERVER)
 	public static int test=0;
 	@Override
 	public void onInitialize() {
 		Registry.register(Registry.ENTITY_TYPE, prefix("diggingegg"),
-				DIGGINGEGG=FabricEntityTypeBuilder.
-				<DiggingEggEntity>create(EntityCategory.MISC,
-						DiggingEggEntity::new)
-				.size(new EntitySize(0.3f,0.3f,true))
-				.trackable(80, 2).build());
+				DIGGINGEGG);
 		Registry.register(Registry.ENTITY_TYPE, prefix("miner"),
-				MINER=FabricEntityTypeBuilder.
-				<MinerEntity>create(EntityCategory.MONSTER,
-						MinerEntity::new)
-				.size(new EntitySize(0.6f,1.8f,true))
-				.trackable(80, 2).build());
+				MINER);
 		Registry.register(Registry.ITEM, prefix("diggingegg"),
 				DiggingEggItem.INSTANCE);
 		GameObjects.addGameRule("raidRadius", "100", Type.NUMERICAL_VALUE);
@@ -52,8 +52,10 @@ public class RaidImMod implements ModInitializer {
 				"true", Type.BOOLEAN_VALUE);
 		GameObjects.addRaidMember("ILLUSIONER", EntityType.ILLUSIONER, 
 				0,0,0,0,0,1,2);
-		GameObjects.addRaidMember("MINER", MINER,0,0,0,1,0,0,3);
+		GameObjects.addRaidMember("MINER", MINER,0,0,0,1,0,1,3);
 		GameObjects.addSpawnEgg(EntityType.ILLUSIONER, 0x3408b8, 0x070023);
+		GameObjects.addSpawnEgg(EntityType.IRON_GOLEM, 0x424242, 0x676767,true);
+		GameObjects.addSpawnEgg(EntityType.SNOW_GOLEM, 0x525252, 0xa58200,true);
 		GameObjects.addSpawnEgg(MINER, 0x645834, 0x370629);
 	}
 	public static Identifier prefix(String val) {

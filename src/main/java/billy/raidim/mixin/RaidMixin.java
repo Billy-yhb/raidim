@@ -1,14 +1,17 @@
 package billy.raidim.mixin;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.function.Predicate;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Coerce;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -17,6 +20,7 @@ import net.minecraft.entity.raid.Raid;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.LocalDifficulty;
 import billy.raidim.RaidImMod.RaidPlayerSelector;
 
 @Mixin(Raid.class)
@@ -71,6 +75,20 @@ public abstract class RaidMixin {
 				y=(2*y+center.getY())/3;
 				z=(2*z+center.getZ())/3;
 				center=new BlockPos(x,y,z);
+			}
+		}
+	}
+	@Inject(method="getBonusCount",at=@At("RETURN"),cancellable=true)
+	public void getBonusCount(@Coerce Enum<?> raid$Member_1, Random random_1,
+			int int_1, LocalDifficulty localDifficulty_1, boolean boolean_1,
+			CallbackInfoReturnable<Integer> info) {
+		if(raid$Member_1.name()=="MINER") {
+			if(int_1>4) {
+				info.setReturnValue(random_1.nextInt(4));
+			}
+		}else if(raid$Member_1.name()=="ILLUSIONER") {
+			if(int_1>6) {
+				info.setReturnValue(random_1.nextInt(3));
 			}
 		}
 	}

@@ -67,8 +67,8 @@ public class MinerEntity extends IllagerEntity {
 			}
 			public void tick() {
 				if(this.mob.getTarget() instanceof IronGolemEntity) {
-					if(this.mob.getTarget().distanceTo(this.mob)<32)
-						speed_fld.set(this, 0.2);
+					if(this.mob.getTarget().distanceTo(this.mob)<18)
+						speed_fld.set(this, 0.3);
 					else
 						speed_fld.set(this, 0.8);
 				}else {
@@ -119,9 +119,9 @@ public class MinerEntity extends IllagerEntity {
 	protected void initAttributes() {
 		super.initAttributes();
 		this.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED).setBaseValue(0.3499999940395355D);
-		this.getAttributeInstance(EntityAttributes.MAX_HEALTH).setBaseValue(30.0D);
+		this.getAttributeInstance(EntityAttributes.MAX_HEALTH).setBaseValue(36.0D);
 		this.getAttributeInstance(EntityAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
-		this.getAttributeInstance(EntityAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
+		this.getAttributeInstance(EntityAttributes.FOLLOW_RANGE).setBaseValue(56.0D);
 	}
 	@Override
 	public EntityData initialize(IWorld iWorld_1, LocalDifficulty localDifficulty_1, SpawnType spawnType_1, EntityData entityData_1, CompoundTag compoundTag_1) {
@@ -173,6 +173,7 @@ public class MinerEntity extends IllagerEntity {
 		DiggingEggEntity egg=new DiggingEggEntity(RaidImMod.DIGGINGEGG,
 				this,world);
 		Vec3d tg=new Vec3d(targetPos).subtract(x,y,z).add(0,1,0);
+		tg=tg.add(0,tg.distanceTo(new Vec3d(0,0,0))/18,0);
 		egg.setVelocity(tg.x,tg.y,tg.z,2.0f,1.2f);
 		world.spawnEntity(egg);
 	}
