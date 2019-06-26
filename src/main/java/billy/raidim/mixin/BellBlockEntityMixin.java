@@ -12,9 +12,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.raid.RaiderEntity;
-import net.minecraft.tag.EntityTypeTags;
 import net.minecraft.util.Tickable;
-import net.minecraft.util.math.BlockPos;
 
 @Mixin(BellBlockEntity.class)
 public abstract class BellBlockEntityMixin extends BlockEntity
