@@ -6,7 +6,7 @@ import java.util.Map;
 
 import sun.misc.Unsafe;
 
-@SuppressWarnings({"rawtypes","unchecked", "restriction"})
+@SuppressWarnings({"rawtypes","unchecked"})
 public class EnumHelper<T extends Enum>{
 	public final Class cls;
 	public static final FieldHelper<Class> clazz_fld=

@@ -12,6 +12,7 @@ public abstract class GolemEntityMixin extends MobEntityWithAi {
 	public GolemEntityMixin(EntityType<? extends MobEntityWithAi> entityType_1, World world_1) {
 		super(entityType_1, world_1);
 	}
+	@Override
 	public void tick() {
 		if(this.getStatusEffect(StatusEffects.BLINDNESS)!=null) {
 			if(this.getTarget()!=null) {

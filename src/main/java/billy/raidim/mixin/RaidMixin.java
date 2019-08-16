@@ -21,6 +21,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LocalDifficulty;
+import billy.raidim.RaidImMod;
 import billy.raidim.RaidImMod.RaidPlayerSelector;
 
 @Mixin(Raid.class)
@@ -45,13 +46,7 @@ public abstract class RaidMixin {
 	public void onTick(CallbackInfo info){
 		ArrayList<VillagerEntity> villagers=new ArrayList<>();
 		int raidRadius=world.getGameRules().getInteger("raidRadius");
-		for(Entity e:world.getEntities(EntityType.VILLAGER, 
-				new Predicate<Entity>() {
-					@Override
-					public boolean test(Entity t) {
-						return true;
-					}
-				})) {
+		for(Entity e:world.getEntities(EntityType.VILLAGER, RaidImMod.ALWAYS_TRUE)) {
 			if(e instanceof VillagerEntity) {
 				VillagerEntity v=(VillagerEntity)e;
 				if(v.getBlockPos().getSquaredDistance(center)<=

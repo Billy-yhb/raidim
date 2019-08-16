@@ -53,7 +53,7 @@ public class DiggingEggEntity extends ThrownItemEntity {
 				(var1.getType()==HitResult.Type.ENTITY&&
 				!((EntityHitResult)var1).getEntity().equals(getOwner()))) {
 			remove();
-			float amount=world.getDifficulty()==Difficulty.HARD?100:90;
+			float amount=world.getDifficulty()==Difficulty.HARD?70:50;
 			for(Entity e:getNearByEntities(var1.getPos())) {
 				if(e instanceof IronGolemEntity||e instanceof WitherEntity||
 						e instanceof SnowGolemEntity) {

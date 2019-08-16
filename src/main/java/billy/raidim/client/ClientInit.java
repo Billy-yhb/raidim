@@ -2,8 +2,10 @@ package billy.raidim.client;
 
 import billy.raidim.GameHooks;
 import billy.raidim.RaidImMod;
+import billy.raidim.client.renderer.ElectricianEntityRender;
 import billy.raidim.client.renderer.MinerEntityRender;
 import billy.raidim.entity.DiggingEggEntity;
+import billy.raidim.entity.ElectricianEntity;
 import billy.raidim.entity.MinerEntity;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -20,6 +22,8 @@ public class ClientInit implements ClientModInitializer{
 						MinecraftClient.getInstance().getItemRenderer()));
 		EntityRendererRegistry.INSTANCE.register(MinerEntity.class,
 				(m,c)->new MinerEntityRender(m));
+		EntityRendererRegistry.INSTANCE.register(ElectricianEntity.class,
+				(m,c)->new ElectricianEntityRender(m));
 		GameHooks.client_entity_spawn_hooks.add((packet,type,world)->{
 			if(type==RaidImMod.DIGGINGEGG) {
 				return new DiggingEggEntity(RaidImMod.DIGGINGEGG,

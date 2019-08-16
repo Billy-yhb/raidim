@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "billy.raidim.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_11",
   "mixins": [
 	"RaidMixin",
 	"VillagerMixin",
@@ -9,11 +9,11 @@
 	"LivingEntityMixin",
 	"RaidManagerMixin",
 	"BellBlockEntityMixin",
-	"GolemEntityMixin"
+	"GolemEntityMixin",
+	"RaiderEntityMixin"
   ],
   "client": [
-	"NetworkMixin",
-	"ItemGroupMixin"
+	"NetworkMixin"
   ],
   "injectors": {
     "defaultRequire": 1
