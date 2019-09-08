@@ -73,6 +73,7 @@ public class RaidImMod implements ModInitializer {
 		GameObjects.addRaidMember("ILLUSIONER", EntityType.ILLUSIONER, 
 				0,0,0,0,0,1,2);
 		GameObjects.addRaidMember("MINER", MINER,0,0,0,1,0,1,3);
+		GameObjects.addRaidMember("ELECTRICIAN", ELECTRICIAN, 0,0,0,0,0,1,1);
 		GameObjects.addSpawnEgg(EntityType.ILLUSIONER, 0x3408b8, 0x070023);
 		GameObjects.addSpawnEgg(EntityType.IRON_GOLEM, 0x424242, 0x676767,true);
 		GameObjects.addSpawnEgg(EntityType.SNOW_GOLEM, 0x525252, 0xa58200,true);
