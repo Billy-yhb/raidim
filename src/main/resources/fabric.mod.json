@@ -2,38 +2,32 @@
   "schemaVersion": 1,
   "id": "raidim",
   "version": "${version}",
-
   "name": "RaidIm",
   "description": "Raid Improve",
   "authors": [
-    "Billy-yhb"
+    "CaveNightingale"
   ],
   "contact": {
-    "homepage": "https://github.com/Billy-yhb/raidim",
-    "sources": ""
+    "website": "https://github.com/CaveNightingale/raidim"
   },
-
-  "license": "GPLv3",
+  "license": "MIT",
   "icon": "assets/raidim/icon.png",
-
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "billy.raidim.RaidImMod"
+    "client": [
+      "cavenightingale.raidim.client.RaidImClient"
     ],
-	"client":[
-      "billy.raidim.client.ClientInit"
-	]
+    "main": [
+	  "cavenightingale.raidim.RaidImMod"
+    ]
   },
+  "accessWidener" : "raidim.accesswidener",
   "mixins": [
     "raidim.mixins.json"
   ],
-
   "depends": {
-    "fabricloader": ">=0.4.0",
-    "fabric": "*"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "fabricloader": ">=0.9.3+build.207",
+    "fabric": "*",
+    "minecraft": "1.16.3"
   }
 }

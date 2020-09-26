@@ -1,19 +1,20 @@
 {
   "required": true,
-  "package": "billy.raidim.mixin",
-  "compatibilityLevel": "JAVA_11",
+  "minVersion": "0.8",
+  "package": "cavenightingale.raidim.mixin",
+  "compatibilityLevel": "JAVA_8",
   "mixins": [
-	"RaidMixin",
-	"VillagerMixin",
-	"ServerWorldMixin",
-	"LivingEntityMixin",
-	"RaidManagerMixin",
-	"BellBlockEntityMixin",
-	"GolemEntityMixin",
-	"RaiderEntityMixin"
+    "EntityMixin",
+    "LightningEntityMixin",
+    "VillagerEntityMixin",
+    "GolemEntityMixin",
+    "RaiderEntityMixin",
+    "RaidMemberMixin",
+    "RaidMixin",
+    "ServerWorldMixin"
   ],
   "client": [
-	"NetworkMixin"
+    "ClientPlayNetworkHandlerMixin",
   ],
   "injectors": {
     "defaultRequire": 1

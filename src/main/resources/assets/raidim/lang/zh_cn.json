@@ -1,11 +1,16 @@
 {
-	"item.raidim.diggingegg":"挖掘蛋",
+	"item.raidim.mining_egg":"挖掘蛋",
 	"item.raidim.miner_spawn_egg":"挖掘者刷怪蛋",
-	"item.raidim.electrician_spawn_egg":"杨永信刷怪蛋",
-	"entity.raidim.diggingegg":"挖掘蛋",
+	"item.raidim.electrician_spawn_egg":"电击者刷怪蛋",
+  	"item.raidim.illusioner_spawn_egg":"幻术师刷怪蛋",
+	"entity.raidim.mining_egg":"挖掘蛋",
 	"entity.raidim.miner":"挖掘者",
-	"entity.raidim.electrician":"杨永信",
-	"item.minecraft.illusioner_spawn_egg":"幻术师刷怪蛋",
+	"entity.raidim.electrician":"电击者",
 	"item.minecraft.snow_golem_spawn_egg":"雪傀儡刷怪蛋",
-	"item.minecraft.iron_golem_spawn_egg":"铁傀儡刷怪蛋"
+	"item.minecraft.iron_golem_spawn_egg":"铁傀儡刷怪蛋",
+
+  	"gamerule.raidRadius": "袭击半径",
+  	"gamerule.tradeInRaid": "允许在袭击中交易",
+  	"gamerule.villagerSpawnGolemInRaid": "村民在袭击中生成铁傀儡",
+  	"gamerule.villagerSpawnGolemCommon": "村民非袭击时期生成铁傀儡"
 }

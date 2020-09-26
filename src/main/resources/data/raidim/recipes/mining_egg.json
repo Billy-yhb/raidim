@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_trapdoor",
+  "pattern": [
+	"###",
+	"#X#",
+	"###"
+  ],
+  "key": {
+	"#": {
+	  "item": "minecraft:egg"
+	},
+	"X": {
+	  "item": "minecraft:diamond_pickaxe"
+	}
+  },
+  "result": {
+	"item": "raidim:mining_egg",
+	"count": 16
+  }
+}

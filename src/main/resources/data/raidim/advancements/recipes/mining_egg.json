@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+	"recipes": [
+	  "raidim:mining_egg"
+	]
+  },
+  "criteria": {
+	"has_diamond_pickaxe": {
+	  "trigger": "minecraft:inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"item": "minecraft:diamond_pickaxe"
+		  }
+		]
+	  }
+	},
+	"has_the_recipe": {
+	  "trigger": "minecraft:recipe_unlocked",
+	  "conditions": {
+		"recipe": "raidim:mining_egg"
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_diamond_pickaxe",
+	  "has_the_recipe"
+	]
+  ]
+}
